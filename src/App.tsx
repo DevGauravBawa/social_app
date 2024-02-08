@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
+import { Toaster } from "@/components/ui/toaster"
 
 import AuthLayout from "./_auth/AuthLayout"
 import SigninForm from "./_auth/forms/SigninForm"
@@ -8,7 +9,7 @@ import { Home } from "./_root/pages"
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <main className="flex h-screen">
       <Routes>
         {/* public route */}
         <Route element={<AuthLayout />}>
@@ -29,6 +30,8 @@ export default function App() {
           />
         </Route>
       </Routes>
-    </BrowserRouter>
+
+      <Toaster />
+    </main>
   )
 }
